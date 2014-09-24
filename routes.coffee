@@ -14,6 +14,8 @@ Router.map ->
       Meteor.user()
     onBeforeAction: ->
       AccountsEntry.signInRequired this
+    waitOn: ->
+      Meteor.subscribe "my-apps"
   # @route "dashboard",
   #   onBeforeAction: ->
   #     AccountsEntry.signInRequired this

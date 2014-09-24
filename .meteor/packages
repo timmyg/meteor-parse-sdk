@@ -14,3 +14,7 @@ cmather:handlebars-server@0.2.0
 joshowens:accounts-entry
 accounts-github
 http
+dburles:collection-helpers
+matb33:collection-hooks
+bruz:github-api
+
