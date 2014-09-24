@@ -1,3 +1,5 @@
-Template.profile.rendered = ->
-	$("#company.editable").editable success: (response, newValue) ->
-		# <do something with newValue - usually a collection.update call>
+Template.me.rendered = ->
+	console.log "me rendered"
+
+Template.me.email = ->
+	Meteor.user().emails[0].address if Meteor.user()

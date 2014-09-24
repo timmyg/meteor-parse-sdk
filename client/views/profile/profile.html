@@ -1,5 +1,18 @@
-<template name="profile">
+<template name="me">
 	<h3>My Profile</h3>
-	<p id="company" class="editable" data-type="text" data-placeholder="Enter text" data-emptytext="Click to enter text" data-rows="4">{{textAreaContent}}</p>
-
+	<form>
+        <div class="form-group">
+            <label for="inputEmail">Email123456</label>
+            <input type="email" class="form-control" id="email" placeholder="{{email}}" disabled> 
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Company</label>
+            <input type="text" class="form-control" id="company" placeholder="{{profile.company}}">
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">API Key</label>
+            <input type="text" class="form-control" id="apikey" placeholder="{{profile.apikey}}" disabled>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
 </template>

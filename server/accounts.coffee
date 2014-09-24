@@ -7,4 +7,6 @@ Meteor.startup ->
     options.profile.company = "" unless options.profile.company
     options.profile.name = "" unless options.profile.name
     user.profile = options.profile if options.profile
+    Organization.create
+    	name: 'BBQ Ham 2'
     user)

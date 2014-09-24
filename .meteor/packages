@@ -4,8 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
-insecure
 coffeescript
 less
 accounts-ui
@@ -16,5 +14,3 @@ cmather:handlebars-server@0.2.0
 joshowens:accounts-entry
 accounts-github
 http
-natestrauser:x-editable-bootstrap
-

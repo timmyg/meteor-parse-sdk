@@ -1,7 +1,7 @@
 Meteor.startup ->
   # accounts-entry issue where you have to click login twice
-  Meteor.autorun ->
-    Router.go "/dashboard" if Meteor.user() and Router.current() and Router.current().path is "/sign-in" # change home to whatever route you want to take the user to after login
+  # Meteor.autorun ->
+  #   Router.go "/dashboard" if Meteor.user() and Router.current() and Router.current().path is "/sign-in" # change home to whatever route you want to take the user to after login
 
   Accounts.ui.config
     passwordSignupFields: 'EMAIL_ONLY'
@@ -27,7 +27,7 @@ Meteor.startup ->
           required: true # Adds html 5 required property if true
       }
       {
-          field: "companyName" # The database property you want to store the data in
+          field: "company" # The database property you want to store the data in
           name: "" # An initial value for the field, if you want one
           label: "Company Name" # The html lable for the field
           placeholder: "" # A placeholder for the field
