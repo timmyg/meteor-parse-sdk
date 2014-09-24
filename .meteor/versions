@@ -1,4 +1,6 @@
 accounts-base@1.0.0
+accounts-github@1.0.0
+accounts-oauth@1.0.0
 accounts-password@1.0.0
 accounts-ui-unstyled@1.0.0
 accounts-ui@1.0.0
@@ -19,9 +21,11 @@ ejson@1.0.0
 email@1.0.2
 follower-livedata@1.0.0
 geojson-utils@1.0.0
+github@1.0.0
 handlebars@1.0.0
 html-tools@1.0.0
 htmljs@1.0.0
+http@1.0.3
 id-map@1.0.0
 insecure@1.0.0
 iron:core@0.3.2
@@ -44,6 +48,8 @@ mrt:accounts-t9n@0.0.13
 mrt:minimongoid@0.8.8
 mrt:underscore-string-latest@2.3.3
 npm-bcrypt@0.7.7
+oauth2@1.0.0
+oauth@1.0.0
 observe-sequence@1.0.1
 ordered-dict@1.0.0
 random@1.0.0
