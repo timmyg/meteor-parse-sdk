@@ -8,6 +8,7 @@ Router.configure
       to: 'footer'
   onBeforeAction: ->
     $('meta[name^="description"]').remove()
+    
 
 Router.map ->
   @route "home",

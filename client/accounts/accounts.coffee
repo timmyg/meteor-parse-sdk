@@ -1,4 +1,8 @@
 Meteor.startup ->
+  # accounts-entry issue where you have to click login twice
+  Meteor.autorun ->
+    Router.go "/dashboard" if Meteor.user() and Router.current() and Router.current().path is "/sign-in" # change home to whatever route you want to take the user to after login
+
   Accounts.ui.config
     passwordSignupFields: 'EMAIL_ONLY'
 
