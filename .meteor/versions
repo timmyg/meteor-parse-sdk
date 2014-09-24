@@ -43,10 +43,12 @@ logging@1.0.2
 meteor@1.0.2
 minifiers@1.0.2
 minimongo@1.0.1
+mizzao:bootstrap-3@3.2.0
 mongo-livedata@1.0.3
 mrt:accounts-t9n@0.0.13
 mrt:minimongoid@0.8.8
 mrt:underscore-string-latest@2.3.3
+natestrauser:x-editable-bootstrap@1.5.2
 npm-bcrypt@0.7.7
 oauth2@1.0.0
 oauth@1.0.0

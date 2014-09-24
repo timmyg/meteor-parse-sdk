@@ -15,6 +15,7 @@ Router.map ->
     path: "/"
   @route "documentation"
   @route "profile",
+    path: "/profile"
     onBeforeAction: ->
       AccountsEntry.signInRequired(this);
   @route "dashboard",
