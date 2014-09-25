@@ -26,6 +26,7 @@ ejson@1.0.2
 email@1.0.2
 fastclick@1.0.0
 follower-livedata@1.0.1
+force-ssl@1.0.1
 geojson-utils@1.0.0
 github@1.1.0
 handlebars@1.0.0
