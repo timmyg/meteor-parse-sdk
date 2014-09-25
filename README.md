@@ -2,5 +2,5 @@
 
 run with:
 ````
-export MONGO_URL=mongodb://localhost:27017/peerioapi; mrt
+export MONGO_URL=mongodb://localhost:27017/peerioapi;meteor
 ````
