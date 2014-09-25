@@ -17,5 +17,6 @@ http
 dburles:collection-helpers
 matb33:collection-hooks
 bruz:github-api
-bootstrap-alerts
+bootstrap3-less
+email
 

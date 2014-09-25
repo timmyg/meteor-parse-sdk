@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "profile": {},
-      "bootstrap-alerts": {}
+      "bootstrap-alerts": {},
+      "bootstrap3-less": {}
     },
     "packages": {
       "profile": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/asktomsk/bootstrap-alerts.git",
         "tag": "v0.0.5",
         "commit": "6ddd650208a77677ab86af9dfccc3a69b1ba8d32"
+      },
+      "bootstrap3-less": {
+        "git": "https://github.com/simison/bootstrap3-less",
+        "tag": "v0.2.1",
+        "commit": "dc94a51ed00d7de6d6f2b6d65107a876d849ad61"
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",

@@ -1,70 +1,86 @@
 <template name="documentation">
  <div class="container" id="faq">
-        <h1>Documentation</h1>
-        <h3>apikey: {{apiKey}}</h3>
+        <h1 class="text-center">Documentation</h1>
+        <!-- <h3>apikey: {{apiKey}}</h3> -->
         <div class="col-md-2">
 	        <div id="affix">
 				<!-- <h5>FAQ</h5> -->
 				<ul class="list-unstyled" role="tablist">
-	                <li><a data-to="#general" class="scroll-to" href="#general">General</a></li>
-	                <li><a data-to="#integration" class="scroll-to" href="#integration">Integration</a></li>
+	                <li>
+                        <a data-to="#my-schedule-widget" class="scroll-to" href="#my-schedule-widget">
+                            <h4>My Schedule Widget</h4>
+                        </a>
+                    </li>
+	                <li>
+                        <a data-to="#pick-time-widget" class="scroll-to" href="#pick-time-widget">
+                            <h4>Pick Time Widget</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-to="#alerts-endpoint" class="scroll-to" href="#alerts-endpoint">
+                            <h4>Alerts Endpoint</h4>
+                        </a>
+                    </li>
 	            </ul>
 			</div>
         </div>
         <div class="col-xs-offset-0 col-xs-12 col-md-10"  >
-            <h1 id="general">General </h1> 
-            <h2>What is Venn</h2>
-            <p>Venn provides a ready-to-use location infrastructure that makes it easy to add contextually-aware features to web and mobile applications. The first product, a mobile locator, allows peer-based services to recommend meetup locations for their users, based on the context of the interaction, as well as user geolocations. This allows developers to provide a great end-to-end user experience both on and off of their platform, while also saving time, money and enabling scale. From mobile-first marketplaces to proximity-based dating apps and beyond, Venn helps to move these digital interactions into the physical world.</p>
+            <h3 id="my-schedule-widget">My Schedule Widget</h3> 
+            <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat, vitae facilisis erat. Cras at mauris ut tortor vestibulum fringilla vel sed metus.</p>
+            <h4>Integration</h4>
+            <p> Donec interdum purus a justo feugiat rutrum. Sed ac neque ut neque dictum accumsan. Cras lacinia rutrum risus, id viverra metus dictum sit amet. Fusce venenatis, urna eget cursus placerat, dui nisl fringilla purus, nec tincidunt sapien justo ut nisl. Curabitur lobortis semper neque et varius.</p>
+            <pre>
+&lt;div id=&quot;venn-schedule&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&amp;apiKey=DJHS4389JKRH98FUD0SJL340934&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    Venn.init(function() {
+        Venn.api('schedule.js', { userId: &quot;9382SDFDS409SDDF23PAA&quot;, apiKey: &quot;DJHS4389JKRH98FUD0SJL340934&quot; }, &quot;GET&quot;, function(response) {
+            document.getElementById('venn-schedule').innerHTML = response.data;
+        });
+    });
+&lt;/script&gt;
+            </pre>
+            <h4>Styling</h4>
+            <p>Etiam eget lectus risus, a varius orci. Nam placerat mauris at dolor imperdiet at aliquet lectus ultricies. Duis tincidunt mi at quam condimentum lobortis.</p>
+            
 
-            <h2>What type of tools does Venn Offer?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus venenatis cursus orci non euismod. Aliquam semper libero non mi aliquam, ut sagittis ante sagittis. Quisque ut arcu tempus, pharetra elit faucibus, rutrum arcu. Nam lorem massa, tincidunt sit amet dolor sed, lobortis pretium eros. Fusce mattis placerat venenatis. Ut facilisis nibh vel eros laoreet, et posuere tellus tempus. Nunc tempus tellus vitae nulla sodales, sit amet sagittis quam fringilla.</p>
-
-            <ul>
-                <li class="peerioli">Interconnected Shared Preference</li>
-                <li class="peerioli">User Preference Learning</li>
-                <li class="peerioli">Co-Decision Making Functionallity</li>
-                <li class="peerioli">Recommendation Engine</li>
-                <li class="peerioli">Geo Based Mapping</li>
-            </ul>
-
-            <h2>Can I see an example</h2>
-            <p>You sure can. We created a consumer tool for anyone to test and use with their friends. It's created with our basic features and doesn't require any special login or account. We ask for a couple of details to set up and your done and you can start playing</p>
-
-            <h2>Who is Venn for?</h2>
-            <p>Venn's technology is prefect for any developer who is looking to better their user experience by integrating end-to-end contextually-aware location based interactions in their current app. That being said Venn is currently focused on creating engaging end-to-end expreinces specifically for Marketplaces, Online Dating and Social and Professionl sites.</p>
-
-            <h2>When will Venn's technology be avaliable?</h2>
-            <p>Currently Venn is working closely with a number of partners and customer to create the best and most rialable exprience possible. At Venn we beleive in the Build, Test and Learn process. We are working with a couple of close partners and customer sto cerate the most reliable expreince possible. As we capacity and learn more we will start give acess to more and more developer sand teams.</p>
-
-            <h2>Why shouldn't I just build it on my own</h2>
-            <p>Please feel free to do so. We do caution that it takes a lot longer and is more diffiuclt than initinally though. We are here to help you; we want you to focus on creating the best user exprience for your users while building your business. Let us focus on helping you get them to where they are looking to meet.</p>
+            <h3 id="pick-time-widget">Pick Time Widget</h3>
+            <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat, vitae facilisis erat. Cras at mauris ut tortor vestibulum fringilla vel sed metus.</p>
+            <h4>Integration</h4>
+            <p> Donec interdum purus a justo feugiat rutrum. Sed ac neque ut neque dictum accumsan. Cras lacinia rutrum risus, id viverra metus dictum sit amet. Fusce venenatis, urna eget cursus placerat, dui nisl fringilla purus, nec tincidunt sapien justo ut nisl. Curabitur lobortis semper neque et varius.</p>
+            <pre>
+&lt;div id=&quot;venn-schedule&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&amp;apiKey=DJHS4389JKRH98FUD0SJL340934&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    Venn.init(function() {
+        Venn.api('schedule.js', { userId: &quot;9382SDFDS409SDDF23PAA&quot;, apiKey: &quot;DJHS4389JKRH98FUD0SJL340934&quot; }, &quot;GET&quot;, function(response) {
+            document.getElementById('venn-schedule').innerHTML = response.data;
+        });
+    });
+&lt;/script&gt;
+            </pre>
+            <h4>Styling</h4>
+            <p>Etiam eget lectus risus, a varius orci. Nam placerat mauris at dolor imperdiet at aliquet lectus ultricies. Duis tincidunt mi at quam condimentum lobortis.</p>
 
 
-            <h2>Does Venn work with my backend?</h2>
-            <p>***Abolutely. We provide a full stack for communications, while you retain complete control over everything else in your product including user management. Layer plays nicely with any type of backend technology, including cloud backend services such as Parse, Heroku, or AWS.***</p>
+           <h3 id="alerts-endpoint">Alerts Endpoint</h3>
+            <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat, vitae facilisis erat. Cras at mauris ut tortor vestibulum fringilla vel sed metus.</p>
+            <h4>Integration</h4>
+            <p> Donec interdum purus a justo feugiat rutrum. Sed ac neque ut neque dictum accumsan. Cras lacinia rutrum risus, id viverra metus dictum sit amet. Fusce venenatis, urna eget cursus placerat, dui nisl fringilla purus, nec tincidunt sapien justo ut nisl. Curabitur lobortis semper neque et varius.</p>
+            <pre>
+&lt;div id=&quot;venn-schedule&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&amp;apiKey=DJHS4389JKRH98FUD0SJL340934&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    Venn.init(function() {
+        Venn.api('schedule.js', { userId: &quot;9382SDFDS409SDDF23PAA&quot;, apiKey: &quot;DJHS4389JKRH98FUD0SJL340934&quot; }, &quot;GET&quot;, function(response) {
+            document.getElementById('venn-schedule').innerHTML = response.data;
+        });
+    });
+&lt;/script&gt;
+            </pre>
+            <h4>Styling</h4>
+            <p>Etiam eget lectus risus, a varius orci. Nam placerat mauris at dolor imperdiet at aliquet lectus ultricies. Duis tincidunt mi at quam condimentum lobortis.</p>
 
-
-            <h1 id="integration">Integration</h1>
-
-            <h2>Is it time consuming to setup?</h2>
-            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>
-                        <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>     <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>     <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>     <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>            <p>Our goal is to make integration as simple as possible while also providing the flexability to create truely customizable expreinces for your users. An expreinced developer can complete a basic inetgration in as little as 1 hour. Obviously, intergration times may vary depending on the complexity and experience level.
-            </p>
         </div>
     </div>
 </template>

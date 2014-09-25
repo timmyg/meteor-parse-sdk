@@ -1,6 +1,7 @@
 {
   "packages": {
     "profile": {},
-    "bootstrap-alerts": {}
+    "bootstrap-alerts": {},
+    "bootstrap3-less": {}
   }
 }

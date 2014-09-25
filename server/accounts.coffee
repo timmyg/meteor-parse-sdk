@@ -1,13 +1,12 @@
 Meteor.startup ->
+    configureEmailServer()
     AccountsEntry.config
         signupCode: null
     Accounts.onCreateUser( (options, user) ->
-        console.log "oncreateuser!!!!"
-        console.log options
-        console.log user
         options.profile = {} unless options.profile
         options.profile.company = "" unless options.profile.company
         options.profile.name = "" unless options.profile.name
+        options.profile.email = user.emails[0].address if user.emails
         user.profile = options.profile if options.profile
         id = Apps.insert({userId: user._id})
         user.apps = [ id ]
@@ -16,6 +15,7 @@ Meteor.startup ->
     Accounts.onLogin (info) ->
       # console.log "onLogin!"
       user = info.user
+      return unless user.services and user.services.github
       if user
         github = new GitHub(
           version: "3.0.0" # required
@@ -42,3 +42,13 @@ Meteor.startup ->
 
         catch e
           console.log e.message
+
+configureEmailServer = ->
+  Meteor.startup ->
+    smtp =
+      username: "postmaster@getvenn.io" # eg: server@gentlenode.com
+      password: "orange13" # eg: 3eeP1gtizk5eziohfervU
+      server: "smtp.mailgun.org" # eg: mail.gandi.net
+      port: 25
+
+    process.env.MAIL_URL = "smtp://#{encodeURIComponent(smtp.username)}:#{encodeURIComponent(smtp.password)}@#{encodeURIComponent(smtp.server)}:#{smtp.port}"
