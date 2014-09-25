@@ -13,6 +13,11 @@
             <label for="inputEmail">API Key</label>
             <input type="text" class="form-control" id="apikey" placeholder="{{apiKey}}" readonly="readonly">
         </div>
-        <button id="save" class="btn btn-primary" data-loading-text="Saving...">Save</button>
+        <div class="form-group">
+            <label for="inputEmail">Alert Endpoint</label>
+            <input type="text" class="form-control" id="alert-endpoint" value="{{alertEndpoint}}">
+        </div>
+        <button id="save" class="btn btn-primary btn-block" data-loading-text="Saving..." data-finished-text="Saved">Save</button>
+        <button id="logout" class="btn btn-danger btn-block">Log Out</button>
     </form>
 </template>

@@ -23,3 +23,63 @@ img {
     text-decoration: underline;
   }
 }
+
+.p0 {
+  padding: 0;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+.header-logo {
+  padding: 5px 20px;
+}
+
+// sticky footer
+@footer-height: 50px;
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -@footer-height; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: @footer-height; 
+}
+
+
+
+.body {
+  position: relative;
+}
+.affix {
+  width: inherit; //helped keep the content the same size on fluid layouts
+  position: fixed;
+  top: 25px;  //height of the nav
+}
+.affix-bottom {
+  width: inherit;
+  position: absolute;
+  top: auto;
+  bottom: 200px;  //height of the footer
+}
+.affix-top {
+  //i didn't need this style but you might
+}
+
+
+// #faq-content {
+//   position: relative!important;
+// }
+
+body {
+  position: relative;
+}

@@ -1,4 +1,9 @@
 Meteor.startup ->
+
+  $('body').attr 'data-spy', 'scroll'
+  $('body').attr 'data-target', '#scrollonme'
+  # data-spy="scroll" data-target=".navbar-example"
+
   # accounts-entry issue where you have to click login twice
   Tracker.autorun ->
     Router.go "/dashboard" if Meteor.user() and Router.current() and Router.current().path is "/sign-in" # change home to whatever route you want to take the user to after login

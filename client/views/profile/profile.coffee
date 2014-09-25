@@ -3,14 +3,15 @@ Template.me.rendered = ->
 
 Template.me.events
 	"click #save": (e, t) ->
-		e.preventDefault()
-		e.stopPropagation()
-		console.log e
-		$(e.target).button('loading')
+		naturalFlow e
+		buttonLoading e.target
 		Meteor.users.update
 			_id: Meteor.userId()
 		,
 			$set:
 				"profile.company": $("input#company").val()
+				"profile.alertEndpoint": $("input#alert-endpoint").val()
 		, (err, success) ->
-			$(e.target).button('reset')
+			buttonHide e.target
+	"click #logout": (e, t) ->
+		Meteor.logout()

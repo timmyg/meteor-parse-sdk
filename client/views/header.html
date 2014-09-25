@@ -1,8 +1,38 @@
 <template name="header">
-  <header>
-  	Header Here
-  	<!-- {{#if isLoggedIn}} -->
-  	{{> loginButtons}}
-  	<!-- {{/if}} -->
-  </header>
+  <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand p0" href="/">
+          	<img src="hero-venn-logo-sm.png" class="header-logo">
+          </a>
+        </div>
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+          <p class="navbar-text navbar-right">
+            {{#if currentUser}}
+              Signed in as <a href="{{pathFor 'me'}}" class="navbar-link">{{currentUser.profile.company}}</a>
+            {{else}}
+              <a href="/sign-in">Log in</a>
+            {{/if}}
+          </p>
+        </div> -->
+        <ul class="collapse navbar-collapse nav navbar-nav navbar-right">
+          <li><a href="{{pathFor 'faq'}}">FAQ</a></li>
+          <li><a href="{{pathFor 'documentation'}}">Documentation</a></li>
+          <li>
+            {{#if currentUser}}
+              <a href="{{pathFor 'me'}}" class="navbar-link">Signed in as {{currentUser.profile.company}}</a>
+            {{else}}
+              <a href="/sign-in">Log in</a>
+            {{/if}}
+            <!-- <a href="{{pathFor 'documenation'}}">Documentation</a> -->
+          </li>
+        </ul>
+      </div>
+    </nav>
 </template>

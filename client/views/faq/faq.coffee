@@ -1,10 +1,10 @@
-Template.documentation.rendered = ->
+Template.faq.rendered = ->
 	$("#affix").affix 
 		offset:
 			top: 120
 
 # should move this to global
-Template.documentation.events
+Template.faq.events
 	"click a.scroll-to": (e, t) ->
 		naturalFlow e
 		console.log e.currentTarget.dataset.to

@@ -14,7 +14,7 @@ Meteor.startup ->
         user)
 
     Accounts.onLogin (info) ->
-      console.log "onLogin!"
+      # console.log "onLogin!"
       user = info.user
       if user
         github = new GitHub(
