@@ -2,6 +2,7 @@
 
 @font-size-base: 18px;
 @line-height-base: 1.428571429;
+@baseFontFamily: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // @brand-danger: pink; // needs a fabulous color ;)
 
@@ -25,3 +26,91 @@
 //    font-size: 18px;
 //    line-height: 28px;
 // }
+
+body {
+	font-family: @baseFontFamily;
+	font-size: 18px;
+	line-height: 26px;
+	margin: 0 auto;
+}
+h1 {
+	font-size: 44px;
+	line-height: 52px;
+	margin-top: 52px;
+	margin-bottom: 26px;
+}
+h2 {
+	font-size: 32px;
+	line-height: 52px;
+	margin-top: 52px;
+	margin-bottom: 26px;
+	color: #333;
+}
+h3 {
+	font-size: 24px;
+	line-height: 26px;
+	margin-top: 26px;
+	margin-bottom: 26px;
+  
+}
+h4 {
+	font-size: 18px;
+	line-height: 26px;
+	margin-top: 26px;
+	margin-bottom: 26px;
+  
+}
+p, ul, ol, pre, table, blockquote {
+	margin-top: 26px;
+	margin-bottom: 26px;
+	color: #777;
+}
+
+/* Sanitation */
+hr {
+	border: 1px solid;
+	margin: -1px 0;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+b, strong, em, small, code {
+  line-height: 1;
+}
+pre {
+	font-size: 14px;
+	padding: 12px 35px;
+}
+sup, sub {
+	vertical-align: baseline;
+	position: relative;
+	top: -0.4em;
+}
+sub {
+	top: 0.4em;
+}
+
+
+
+
+// h1, .h1 {
+//   font-size: 36px; }
+
+// h2, .h2 {
+//   font-size: 30px; }
+
+// h3, .h3 {
+//   font-size: 24px; }
+
+// h4, .h4 {
+//   font-size: 18px; }
+
+// h5, .h5 {
+//   font-size: 14px; }
+
+// h6, .h6 {
+//   font-size: 12px; }
+
+// p {
+//   margin: 0 0 10px; }
