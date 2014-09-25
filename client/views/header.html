@@ -12,21 +12,12 @@
           	<img src="hero-venn-logo-sm.png" class="header-logo">
           </a>
         </div>
-        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
-          <p class="navbar-text navbar-right">
-            {{#if currentUser}}
-              Signed in as <a href="{{pathFor 'me'}}" class="navbar-link">{{currentUser.profile.company}}</a>
-            {{else}}
-              <a href="/sign-in">Log in</a>
-            {{/if}}
-          </p>
-        </div> -->
         <ul class="collapse navbar-collapse nav navbar-nav navbar-right">
           <li><a href="{{pathFor 'faq'}}">FAQ</a></li>
           <li><a href="{{pathFor 'documentation'}}">Documentation</a></li>
           <li>
             {{#if currentUser}}
-              <a href="{{pathFor 'me'}}" class="navbar-link">Signed in as {{currentUser.profile.company}}</a>
+              <a href="{{pathFor 'me'}}" class="navbar-link">Signed in as {{generalName}}</a>
             {{else}}
               <a href="/sign-in">Log in</a>
             {{/if}}

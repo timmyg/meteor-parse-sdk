@@ -1,14 +1,8 @@
 # Template Helpers
+UI.registerHelper "generalName", ->
+	Meteor.user().profile.company || Meteor.user().profile.username || Meteor.user().profile.email
 UI.registerHelper "apiKey", ->
-	console.log "apikey..."
 	Apps.findOne().apiKey if Apps.findOne()
-
-UI.registerHelper "flashAlert", (selector, delay) ->
-  console.log "flashAlert"
-  alert = $(selector).alert()
-  Meteor.setTimeout (->
-    alert.alert "close"
-  ), delay
 
 # Javascript Helpers
 window.buttonLoading = (selector, delay) ->

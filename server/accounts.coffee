@@ -37,6 +37,7 @@ Meteor.startup ->
           ,
             $set:
               "profile.email": emails[0]
+              "profile.username": user.services.github.username
               "services.github.email": emails[0]
               "services.github.emails": emails
 

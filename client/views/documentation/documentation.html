@@ -31,10 +31,10 @@
             <p> Donec interdum purus a justo feugiat rutrum. Sed ac neque ut neque dictum accumsan. Cras lacinia rutrum risus, id viverra metus dictum sit amet. Fusce venenatis, urna eget cursus placerat, dui nisl fringilla purus, nec tincidunt sapien justo ut nisl. Curabitur lobortis semper neque et varius.</p>
             <pre>
 &lt;div id=&quot;venn-schedule&quot;&gt;&lt;/div&gt;
-&lt;script src=&quot;http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&amp;apiKey=DJHS4389JKRH98FUD0SJL340934&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&amp;apiKey={{myApiKey}}&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
     Venn.init(function() {
-        Venn.api('schedule.js', { userId: &quot;9382SDFDS409SDDF23PAA&quot;, apiKey: &quot;DJHS4389JKRH98FUD0SJL340934&quot; }, &quot;GET&quot;, function(response) {
+        Venn.api('schedule.js', { userId: &quot;9382SDFDS409SDDF23PAA&quot;, apiKey: &quot;{{myApiKey}}&quot; }, &quot;GET&quot;, function(response) {
             document.getElementById('venn-schedule').innerHTML = response.data;
         });
     });

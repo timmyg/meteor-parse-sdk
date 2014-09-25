@@ -3,6 +3,12 @@ Template.documentation.rendered = ->
 		offset:
 			top: 120
 
+Template.documentation.myApiKey = ->
+	if Meteor.user()
+		return Apps.findOne().apiKey if Apps.findOne()
+	else
+		return "<YOUR API KEY HERE>"
+
 # should move this to global
 Template.documentation.events
 	"click a.scroll-to": (e, t) ->

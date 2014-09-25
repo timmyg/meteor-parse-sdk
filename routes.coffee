@@ -5,8 +5,10 @@ Router.map ->
 
   @route "faq"
 
-  @route 'home',
-    path: '/'
+  @route '/',
+    onBeforeAction: ->
+      Router.go('dashboard') if Meteor.user()
+      Router.go('/sign-in') unless Meteor.user()
 
   @route 'dashboard',
     onBeforeAction: ->
