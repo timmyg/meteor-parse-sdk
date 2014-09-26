@@ -4,7 +4,9 @@
 /* ===============================
     GLOBAL STYLES
    =============================== */
-
+body {
+  position: relative;
+}
 img {
   max-width: 100%;
 }
@@ -31,33 +33,28 @@ img {
 a {
   text-decoration: none!important;
 }
+
+/*------------------------------------*\
+    #SITE-WIDE-BACKGROUND-GRAPHICS
+\*------------------------------------*/
+
+.page-top-spacing {
+    margin: 100px;
+}
+
 .navbar {
+  background-color: white;
   .navbar-nav {
     margin-top: 15px;
   }
 }
+
 .header-logo {
   padding: 5px 20px;
 }
 
-// sticky footer
-@footer-height: 50px;
-html, body {
-  height: 100%;
-}
-.page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -@footer-height; 
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-.site-footer, .page-wrap:after {
-  /* .push must be the same height as footer */
-  height: @footer-height; 
-}
+
+
 
 
 
@@ -79,18 +76,69 @@ html, body {
   //i didn't need this style but you might
 }
 
+/*------------------------------------*\
+    #SITE-WIDE-BACKGROUND-GRAPHICS
+\*------------------------------------*/
+
+/*
+ * This section is for the different 
+ * global background images used across 
+ * the site.
+ */
+
 .venn-background-image {
-  // background-image: url("../img/venn-background-image.png");
-  // background-repeat: no-repeat;
-  // background-position: center top;
-  // background-size: 100%;
+  background-image: url("../img/venn-background-image.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
 }
 
+
+/*------------------------------------*\
+    #CONTAINER-STYLING
+\*------------------------------------*/
+
+/*
+ * This section is for the different 
+ * global containers used across the 
+ * site.
+ */
+
+.container-box { 
+  border: 1px solid #cecece;
+  padding: 60px;
+}
 
 // #faq-content {
 //   position: relative!important;
 // }
 
-body {
-  position: relative;
+
+
+
+/*------------------------------------*\
+    #STICKY-FOOTER
+\*------------------------------------*/
+
+/*
+ * This section is for the different 
+ * global containers used across the 
+ * site.
+ */
+@footer-height: 50px;
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -@footer-height; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: @footer-height; 
 }
