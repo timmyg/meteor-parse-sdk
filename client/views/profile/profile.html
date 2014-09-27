@@ -1,27 +1,29 @@
 <template name="me">
     <div class="container" id="Profile">
-    	<h2 class="text-center">My Profile</h2>
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-        	<form>
-                <div class="form-group">
-                    <label for="inputEmail">Email</label>
-                    <span type="email" class="form-control input" id="email">{{currentUser.profile.email}}</span> 
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail">Company</label>
-                    <input type="text" class="form-control input" id="company" value="{{currentUser.profile.company}}">
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail">API Key</label>
-                    <span type="text" class="form-control input" id="apikey">{{apikey}}</span>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail">Alert Endpoint</label>
-                    <input type="text" class="form-control input" id="alert-endpoint" value="{{app.alertEndpoint}}">
-                </div>
-                <button id="save" class="btn btn-primary btn-block" data-loading-text="Saving..." data-finished-text="Saved">Save</button>
-                <button id="logout" class="btn btn-danger btn-block">Log Out</button>
-            </form>
+        <div class="container-box col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-4">
+        	<h2 class="text-center">My Profile</h2>
+            <div class="col-xs-12">
+            	<form>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <span type="email" class="form-control input" id="email">{{currentUser.profile.email}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Company</label>
+                        <input type="text" class="form-control input" id="company" value="{{currentUser.profile.company}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">API Key</label>
+                        <span type="text" class="form-control input" id="apikey" >{{apikey}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Alert Endpoint</label>
+                        <input type="text" class="form-control input" id="alert-endpoint" value="{{app.alertEndpoint}}">
+                    </div>
+                    <button id="save" class="btn btn-primary btn-block" data-loading-text="Saving..." data-finished-text="Saved">Save</button>
+                    <button id="logout" class="btn btn-danger btn-block">Log Out</button>
+                </form>
+            </div>
         </div>
     </div>
 </template>
