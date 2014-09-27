@@ -1,6 +1,9 @@
 Template.me.rendered = ->
 	# console.log "me rendered"
 
+Template.me.app = ->
+	Apps.findOne()
+
 Template.me.events
 	"click #save": (e, t) ->
 		naturalFlow e
@@ -10,8 +13,11 @@ Template.me.events
 		,
 			$set:
 				"profile.company": $("input#company").val()
-				"profile.alertEndpoint": $("input#alert-endpoint").val()
 		, (err, success) ->
-			buttonHide e.target
+			Apps.update Apps.findOne({userId: Meteor.userId()}),
+				$set:
+					"alertEndpoint": $("input#alert-endpoint").val()
+				, (err, success) ->
+					buttonHide e.target
 	"click #logout": (e, t) ->
 		Meteor.logout()

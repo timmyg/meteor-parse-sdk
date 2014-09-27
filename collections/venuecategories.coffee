@@ -1,0 +1,1 @@
+@VenueCategories = new Mongo.Collection "venuecategories"

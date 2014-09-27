@@ -1,0 +1,1 @@
+@ScheduleTimeframes = new Mongo.Collection "scheduletimeframes"

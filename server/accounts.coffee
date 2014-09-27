@@ -8,7 +8,18 @@ Meteor.startup ->
         options.profile.name = "" unless options.profile.name
         options.profile.email = user.emails[0].address if user.emails
         user.profile = options.profile if options.profile
-        id = Apps.insert({userId: user._id})
+        # console.log "sched"
+        # console.log ScheduleTimeframes.findOne()
+        id = Apps.insert
+          userId: user._id
+          venueCategories: [
+              VenueCategories.findOne
+                name: "Marketplace"
+          ]
+          alertEndpoint: ""
+          scheduleIncrements: 30
+          scheduleTimeframes: ScheduleTimeframes.findOne({name: "default"})
+
         user.apps = [ id ]
         user)
 

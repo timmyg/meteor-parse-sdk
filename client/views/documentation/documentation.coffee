@@ -2,10 +2,13 @@ Template.documentation.rendered = ->
 	$("#affix").affix 
 		offset:
 			top: 120
+	$("#email-tabs a").click (e) ->
+		e.preventDefault()
+		$(this).tab "show"
 
 Template.documentation.myApiKey = ->
 	if Meteor.user()
-		return Apps.findOne().apiKey if Apps.findOne()
+		return Apps.findOne().apikey if Apps.findOne()
 	else
 		return "<YOUR API KEY HERE>"
 
