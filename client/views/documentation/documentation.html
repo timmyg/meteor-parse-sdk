@@ -2,6 +2,9 @@
 <div class="container" id="faq">
     <h1 class="text-center">Documentation</h1>
     <!-- <h2>apikey: {{apiKey}}</h2> -->
+    <p>
+        Integrating Venn is simple.  Integrate the "My Schedule" widget below so that users can set their schedule.  Then, integrate the "Pick Time" widget so that other user's can create meetups with other users. Lastly, you'll set up a server endpoint so that we can call it when you need to alert users via email (or however you would like).
+    </p>
     <div class="col-md-3">
         <div id="affix">
             <!-- <h5>FAQ</h5> -->
@@ -42,7 +45,7 @@
                     </tr>
                     <tr>
                         <td>userid</td>
-                        <td>Unique identifier for the user whose schedule is being set</td>
+                        <td>Unique identifier for the user's schedule that is being set</td>
                     </tr>
                 </tbody>
             </table>
@@ -73,6 +76,7 @@
         <h2 id="pick-time-widget">Pick Time Widget</h2>
         <p>Allow a user to create a meetup with a another user on your platform.</p>
         <h3>Integration</h3>
+        <p>Drop this code at the end of your platform's transaction process so that your user (userid below) can seamlessly set up a meetup with the "seller" (authoruserid below). You must set up alerts (step 3) so that users are alerted by your platform.</p>
         <p>
 
             <table class="table">
@@ -94,7 +98,7 @@
                     </tr>
                                         <tr>
                         <td>authoruserid</td>
-                        <td>Your platform's unique identifier for the other user (like a seller in a marketplace)</td>
+                        <td>Your platform's unique identifier for the other user (e.g. a seller in a marketplace)</td>
                         <td>"34002"</td>
                     </tr>
                                         <tr>
@@ -106,8 +110,8 @@
                         <td>addresses</td>
                         <td>Array of addresses so that we can find best place to meet</td>
                         <td>[<br>
-                                &nbsp;&nbsp;"1411 Vine St. Cincinnati, OH 45202",<br>
-                                &nbsp;&nbsp;"45040"<br>
+                                "1411 Vine St. Cincinnati, OH 45202",<br>
+                                "45040"<br>
                             ]<br>
                         </td>
                     </tr>
@@ -124,9 +128,10 @@
         <h2 id="alerts-endpoint">Alerts Endpoint</h2>
         <p>Set up an endpoint for us to call when a user needs to be alerted.</p>
         <h3>Integration</h3>
-        <p> We will call your alerts endpoint (that you set up in your profile) any time you should alert your user (when a meetup is finalized, canceled, etc.) You can set up your email template as you prefer.  We will pass you the following parameters in the body of a post request:
+        <p>We will call your alerts endpoint (that you set up in your profile) any time you should alert your user (when a meetup is finalized or canceled). You can set up your email template as you prefer.</p>
+        <p>
+        You can either use our subject/message for quick setup, or you can customize your own via the data we pass below. We will pass you the following parameters in the body of a post request:
         </p>
-
             <table class="table">
                 <thead>
                     <th>Key</th>
@@ -135,29 +140,44 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td>type</td>
+                        <td>The type of alert</td>
+                        <td>"created" (or "canceled")</td>
+                    </tr>
+                    <tr>
                         <td>subject</td>
                         <td>The subject of the email</td>
-                        <td>Your Meetup is All Set!</td>
+                        <td>"Your Meetup is All Set!"</td>
                     </tr>
                     <tr>
                         <td>body</td>
                         <td>The body of the email</td>
-                        <td>Your meetup is all set for Friday, March 12th at 3:00 pm at Starbucks at 1490 Main St!</td>
+                        <td>"Your meetup is all set for Friday, March 12th at 3:00 pm at Starbucks (1490 Main St)!"</td>
                     </tr>
                     <tr>
                         <td>txnid</td>
                         <td>The txn id that you originally passed us, so that you can reference the transaction in the email.</td>
-                        <td>90450023</td>
+                        <td>"90450023"</td>
                     </tr>
                     <tr>
                         <td>userid</td>
                         <td>The user id of the user that you passed us.</td>
-                        <td>03454554</td>
+                        <td>"03454554"</td>
                     </tr>
                     <tr>
                         <td>authoruserid</td>
                         <td>The other user id that you passed us.</td>
-                        <td>00989345</td>
+                        <td>"00989345"</td>
+                    </tr>
+                    <tr>
+                        <td>data.place</td>
+                        <td></td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>data.date</td>
+                        <td></td>
+                        <td>...</td>
                     </tr>
                 </tbody>
             </table>
@@ -235,10 +255,10 @@ sendgrid.send({
 });
 </pre>
 -->
-              </div>
+<!--               </div>
             </div>
 
-        </p>
+        </p> -->
 
     </div>
 </div>
