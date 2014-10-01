@@ -10,7 +10,7 @@ Router.map ->
   @route '/',
     onBeforeAction: ->
       Router.go('dashboard') if Meteor.user()
-      Router.go('/sign-in') unless Meteor.user()
+      Router.go('/documentation') unless Meteor.user()
 
   @route 'dashboard',
     onBeforeAction: ->
