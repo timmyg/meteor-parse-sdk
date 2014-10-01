@@ -1,7 +1,7 @@
 Package.describe({
-  summary: " \* Fill me in! *\ ",
-  version: "1.0.0",
-  git: " \* Fill me in! *\ "
+  summary: " Parse JS SDK.  Compatible with 0.9.0+ ",
+  version: "1.0.1",
+  git: "https://github.com/timmyg/meteor-parse-sdk"
 });
 
 Package.onUse(function(api) {
