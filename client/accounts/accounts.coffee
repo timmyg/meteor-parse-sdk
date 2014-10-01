@@ -1,5 +1,5 @@
 Meteor.startup ->
-
+  Parse.initialize("nVFEpFpLtDVOHmKhM0KRlJ4xHfToVohUSvGv1u7t", "y6rjPM0J9uLdveGWrnzLVId7grSlWpbHIe4ILiM3")
   $('body').attr 'data-spy', 'scroll'
   $('body').attr 'data-target', '#scrollonme'
   # data-spy="scroll" data-target=".navbar-example"

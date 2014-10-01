@@ -1,5 +1,12 @@
 <template name="modals">
 
+{{> signupAdditionModal}}
+{{> contactModal}}
+
+</template>
+
+
+<template name="signupAdditionModal">
   <div class="modal fade" id="signup-modal">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -25,6 +32,35 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary btn-lg btn-block text-center submit">Submit</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+</template>
+
+<template name="contactModal">
+  <div class="modal fade" id="contact-modal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title text-center">Contact</h4>
+        </div>
+        <div class="modal-body clearfix">
+          <div class="">
+              <div class="form-group">
+                  <label class="sr-only" for="name">Name</label>
+                  <input type="text" class="form-control input-lg" id="name" placeholder="Name" autofocus="autofocus">
+              </div>
+              <div class="form-group">
+                  <label class="sr-only" for="title">What's Up</label>
+                  <textarea type="text" class="form-control input-lg" id="whatup" placeholder="What's Up?"></textarea>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-lg btn-block text-center contact-modal submit">Submit</button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
