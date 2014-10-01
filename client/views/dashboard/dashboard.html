@@ -1,35 +1,36 @@
 <template name="dashboard">
-<div class="container-fluid page-wrap pl-0 pr-0 ">
-	<div class="container-fluid">
-		<div class="container dashboard row col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-			<h1 class="dashboard-title text-center">Start Today</h1>
-			<p class="dashbaord-sub-title text-center">Dive into our quick start guild and integration documentaiton. If you have any questions, please feel free to contact us at <a href="">support@getvenn.io</a></p>
-			<div class="dashboard-button-container">
-				<h3>Dashboard</h3>
-				<!-- 			<div class="dashboard-button documentation col-xs-12 col-sm-5 col-md-6">
+
+<div class="container-fluid venn-background-image">
+	<div class="containerdashbaord row col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+		<h1 class="dashbaord-title text-center">Start Today</h1>
+		<p class=" text-center">Dive into our quick start quide and integration documentation. If you have any questions, please feel free to contact us <a href="mailto:hello@getvenn.io" >here</a>
+		</p>
+
+		<div class="dashboard-button-container">
+			<h3>Dashboard</h3>
+			<!-- 			<div class="dashboard-button documentation col-xs-12 col-sm-5 col-md-6">
 					<a href="{{pathFor 'documentation'}}" class="col-xs-12">Documentation</a>
 					<p class="subtext">&nbsp;</p>
-				</div>
-				-->
-				<div class="dashboard-button-box col-xs-12 col-sm-5 col-sm-offset-0 col-md-6 col-md-offset-0">
-					<a href="{{pathFor 'documentation'}}" class="clickable">
-						<div class="dashboard-button  col-xs-12">
-							<div class="graphic-container  documentation"></div>
-							<h5>Documents</h5>
-							<p class="subtext">&nbsp;</p>
-						</div>
-					</a>
-				</div>
-				
-				<div class="dashboard-button-box col-xs-12 col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
-					<a href="{{pathFor 'me'}}" class="clickable">
-						<div class="dashboard-button  col-xs-12">
-							<div class="graphic-container  profile"></div>
-							<h5>View profile</h5>
-							<p class="subtext">API Key</p>
-						</div>
-					</a>
-				</div>
+			</div>
+			-->
+			<div class="dashboard-button-box col-xs-12 col-sm-5 col-sm-offset-0 col-md-6 col-md-offset-0">
+				<a href="{{pathFor 'documentation'}}" class="clickable">
+					<div class="dashboard-button  col-xs-12">
+						<div class="graphic-container  documentation"></div>
+						<h5>Documentation</h5>
+						<p class="subtext">&nbsp;</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="dashboard-button-box col-xs-12 col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+				<a href="{{pathFor 'me'}}" class="clickable">
+					<div class="dashboard-button  col-xs-12">
+						<div class="graphic-container  profile"></div>
+						<h5>View profile</h5>
+						<p class="subtext">User Information, API Key</p>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>

@@ -5,83 +5,224 @@
             <div class="col-xs-12 col-md-3"></div>
             <h1 class="col-xs-12 col-md-9">Documentation</h1>
         </div>
-        <!-- <h2>apikey: {{apiKey}}</h2> -->
-        <div class="col-md-3">
-            <div id="affix">
-                <!-- <h5>FAQ</h5> -->
-                <ul class="list-unstyled" role="tablist">
-                    <li>
-                        <a data-to="#my-schedule-widget" class="scroll-to" href="#my-schedule-widget">
-                            <h4>My Schedule Widget</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-to="#pick-time-widget" class="scroll-to" href="#pick-time-widget">
-                            <h4>Pick Time Widget</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-to="#alerts-endpoint" class="scroll-to" href="#alerts-endpoint">
-                            <h4>Alerts Endpoint</h4>
-                        </a>
-                    </li>
-                </ul>
+    </div>
+    <div class="col-xs-offset-0 col-xs-12 col-md-9"  >
+        <h2 id="my-schedule-widget">My Schedule Widget</h2>
+        <h5>Set a user's schedule</h5>
+        <p>Saves a user's default weekly schedule so that other's can create meetup's around their schedule. Place this in the user profile, or integrate it into the "listing" process in the case of a marketplace.</p>
+        <h3>Integration</h3>
+        <p>Drop the code snippet below, replacing the userId in the config object with a unique identifier for that user (usually a database record id).
+            <table class="table">
+                <thead>
+                    <th>Key</th>
+                    <th>Value</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>apikey</td>
+                        <td>Your API Key (found in your profile)</td>
+                    </tr>
+                    <tr>
+                        <td>userid</td>
+                        <td>Unique identifier for the user whose schedule is being set</td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+<pre>
+&lt;div id=&quot;venn-picktimes&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    config = {
+        apikey: &quot;DJHS4389JKRH98FUD0SJL340934&quot;,
+        userid: &quot;8434843795JKHDFKJSDHFJKHDS&quot;,
+        inviteruserid: &quot;E9382SDFDS409SDDF23PAA&quot;,
+        txnid: &quot;KLJSD20384lKHJDJKFSHJD&quot;,
+        addresses: [
+            &quot;1411 Vine St. Cincinnati, OH 45202&quot;,
+            &quot;45040&quot;
+        ]
+    }
+    function vennLoaded(){
+        /* anything you want to do after widget has loaded */
+    };
+    /*do no edit anything below this line*/
+    var script = document.createElement(&#39;script&#39;); script.onload = function() {Venn.init(function() {Venn.api(&#39;pickmeetup.js&#39;, { userId: config.userid, apiKey: config.apikey, inviterUserId: config.inviteruserid, addresses: config.addresses, txnId: config.txnid }, &quot;GET&quot;, function(response) {document.getElementById(&#39;venn-picktimes&#39;).innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config.addresses);  }); }); }; script.src = &quot;http://api-tim.getvenn.io/v1/sdk.js?userId=&quot;+config.userid+&quot;&amp;apiKey=&quot;+config.apikey+&quot;&amp;txnId=&quot;+config.txnid+&quot;&amp;inviterUserId=&quot;+config.inviteruserid; document.getElementsByTagName(&#39;head&#39;)[0].appendChild(script);
+&lt;/script&gt;
+</pre>
+        <!-- <h3>Styling</h3> -->
+        <p></p>
+        
+        <h2 id="pick-time-widget">Pick Time Widget</h2>
+        <p>Allow a user to create a meetup with a another user on your platform.</p>
+        <h3>Integration</h3>
+        <p>
+
+            <table class="table">
+                <thead>
+                    <th>Key</th>
+                    <th>Value</th>
+                    <th>Example</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>apikey</td>
+                        <td>Your API Key (found in your profile)</td>
+                        <td>"KDSL234234JSD34590JKDSHFDS"</td>
+                    </tr>
+                                        <tr>
+                        <td>userid</td>
+                        <td>Your platform's unique identifier for this user</td>
+                        <td>"435345"</td>
+                    </tr>
+                                        <tr>
+                        <td>authoruserid</td>
+                        <td>Your platform's unique identifier for the other user (like a seller in a marketplace)</td>
+                        <td>"34002"</td>
+                    </tr>
+                                        <tr>
+                        <td>txnid</td>
+                        <td>Unique ID for this meetup (normally a database id for this transaction)</td>
+                        <td>"023984902384"</td>
+                    </tr>
+                                        <tr>
+                        <td>addresses</td>
+                        <td>Array of addresses so that we can find best place to meet</td>
+                        <td>[<br>
+                                &nbsp;&nbsp;"1411 Vine St. Cincinnati, OH 45202",<br>
+                                &nbsp;&nbsp;"45040"<br>
+                            ]<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+            <pre>
+&lt;script&gt;<br/>                config = {<br/>                    apikey: &quot;DJHS4389JKRH98FUD0SJL340934&quot;,<br/>                    userid: &quot;8434843795JKHDFKJSDHFJKHDS&quot;,<br/>                    inviteruserid: &quot;E9382SDFDS409SDDF23PAA&quot;,<br/>                    txnid: &quot;KLJSD20384lKHJDJKFSHJD&quot;,<br/>                    addresses: [<br/>                        &quot;1411 Vine St. Cincinnati, OH 45202&quot;,<br/>                        &quot;45040&quot;<br/>                    ]<br/>                }<br/>                function vennLoaded(){<br/>                    /* anything you want to do after widget has loaded */<br/>                };<br/>                /*do no edit anything below this line*/<br/>                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userId: config.userid, apiKey: config.apikey, inviterUserId: config.inviteruserid, addresses: config.addresses, txnId: config.txnid }, &quot;GET&quot;, function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config.addresses);  }); }); }; script.src = &quot;http://api-tim.getvenn.io/v1/sdk.js?userId=&quot;+config.userid+&quot;&amp;apiKey=&quot;+config.apikey+&quot;&amp;txnId=&quot;+config.txnid+&quot;&amp;inviterUserId=&quot;+config.inviteruserid; document.getElementsByTagName('head')[0].appendChild(script);<br/>            &lt;/script&gt;
+</pre>
+        <!-- <h3>Styling</h3> -->
+
+
+
+        <h2 id="alerts-endpoint">Alerts Endpoint</h2>
+        <p>Set up an endpoint for us to call when a user needs to be alerted.</p>
+        <h3>Integration</h3>
+        <p> We will call your alerts endpoint (that you set up in your profile) any time you should alert your user (when a meetup is finalized, canceled, etc.) You can set up your email template as you prefer.  We will pass you the following parameters in the body of a post request:
+        </p>
+
+            <table class="table">
+                <thead>
+                    <th>Key</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>subject</td>
+                        <td>The subject of the email</td>
+                        <td>Your Meetup is All Set!</td>
+                    </tr>
+                    <tr>
+                        <td>body</td>
+                        <td>The body of the email</td>
+                        <td>Your meetup is all set for Friday, March 12th at 3:00 pm at Starbucks at 1490 Main St!</td>
+                    </tr>
+                    <tr>
+                        <td>txnid</td>
+                        <td>The txn id that you originally passed us, so that you can reference the transaction in the email.</td>
+                        <td>90450023</td>
+                    </tr>
+                    <tr>
+                        <td>userid</td>
+                        <td>The user id of the user that you passed us.</td>
+                        <td>03454554</td>
+                    </tr>
+                    <tr>
+                        <td>authoruserid</td>
+                        <td>The other user id that you passed us.</td>
+                        <td>00989345</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active"><a href="#java" role="tab" data-toggle="tab">Java</a></li>
+              <li><a href="#python" role="tab" data-toggle="tab">Python</a></li>
+              <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li>
+              <li><a href="#node" role="tab" data-toggle="tab">Node</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <!--
+            <div class="tab-content">
+              <div class="tab-pane active" id="java">
+<pre>
+import com.sendgrid.*;
+SendGrid sendgrid = new SendGrid("sendgrid_username", "sendgrid_password");
+
+SendGrid.Email email = new SendGrid.Email();
+email.addTo("example@example.com");
+email.setFrom("other@example.com");
+email.setSubject("Hello World");
+email.setText("My first email through SendGrid");
+
+try {
+  SendGrid.Response response = sendgrid.send(email);
+catch (SendGridException e) {
+  System.out.println(e);
+}
+</pre>
+
+              </div>
+              <div class="tab-pane" id="python">
+<pre>
+import sendgrid
+
+sg = sendgrid.SendGridClient('YOUR_SENDGRID_USERNAME', 'YOUR_SENDGRID_PASSWORD')
+
+message = sendgrid.Mail()
+message.add_to('John Doe ')
+message.set_subject('Example')
+message.set_text('Body')
+message.set_from('Doe John ')
+status, msg = sg.send(message)   
+</pre>
+
+              </div>
+              <div class="tab-pane" id="php">
+<pre>
+require 'vendor/autoload.php';
+$sendgrid = new SendGrid('YOUR_SENDGRID_USERNAME', 'YOUR_SENDGRID_PASSWORD');
+
+$message = new SendGrid\Email();
+$message->addTo('foo@bar.com')->
+          setFrom('me@bar.com')->
+          setSubject('Subject goes here')->
+          setText('Hello World!')->
+          setHtml('<strong>Hello World!</strong>');
+$response = $sendgrid->send($message);   
+</pre>
+
+              </div>
+              <div class="tab-pane" id="node">
+<pre>
+var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+sendgrid.send({
+  to:       'example@example.com',
+  from:     'other@example.com',
+  subject:  'Hello World',
+  text:     'My first email through SendGrid.'
+}, function(err, json) {
+  if (err) { return console.error(err); }
+  console.log(json);
+});
+</pre>
+-->
+              </div>
             </div>
-        </div>
-        <div class="col-xs-offset-0  col-xs-12  col-md-9"  >
-            <h2 id="my-schedule-widget">My Schedule Widget</h2>
-            <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat, vitae facilisis erat. Cras at mauris ut tortor vestibulum fringilla vel sed metus.</p>
-            <h3>Integration</h3>
-            <p> Donec interdum purus a justo feugiat rutrum. Sed ac neque ut neque dictum accumsan. Cras lacinia rutrum risus, id viverra metus dictum sit amet. Fusce venenatis, urna eget cursus placerat, dui nisl fringilla purus, nec tincidunt sapien justo ut nisl. Curabitur lobortis semper neque et varius.</p>
-<pre>
-&lt;div id=&quot;venn-schedule&quot;&gt;&lt;/div&gt;
-&lt;script src=&quot;http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&amp;apiKey={{myApiKey}}&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-    Venn.init(function() {
-        Venn.api('schedule.js', { userId: &quot;9382SDFDS409SDDF23PAA&quot;, apiKey: &quot;{{myApiKey}}&quot; }, &quot;GET&quot;, function(response) {
-            document.getElementById('venn-schedule').innerHTML = response.data;
-        });
-    });
-&lt;/script&gt;
-</pre>
-            <h3>Styling</h3>
-            <p>Etiam eget lectus risus, a varius orci. Nam placerat mauris at dolor imperdiet at aliquet lectus ultricies. Duis tincidunt mi at quam condimentum lobortis.</p>
-            
-            <h2 id="pick-time-widget">Pick Time Widget</h2>
-            <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat, vitae facilisis erat. Cras at mauris ut tortor vestibulum fringilla vel sed metus.</p>
-            <h3>Integration</h3>
-            <p> Donec interdum purus a justo feugiat rutrum. Sed ac neque ut neque dictum accumsan. Cras lacinia rutrum risus, id viverra metus dictum sit amet. Fusce venenatis, urna eget cursus placerat, dui nisl fringilla purus, nec tincidunt sapien justo ut nisl. Curabitur lobortis semper neque et varius.</p>
-<pre>
-&lt;div id=&quot;venn-schedule&quot;&gt;&lt;/div&gt;
-&lt;script src=&quot;http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&amp;apiKey=DJHS4389JKRH98FUD0SJL340934&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-    Venn.init(function() {
-        Venn.api('schedule.js', { userId: &quot;9382SDFDS409SDDF23PAA&quot;, apiKey: &quot;DJHS4389JKRH98FUD0SJL340934&quot; }, &quot;GET&quot;, function(response) {
-            document.getElementById('venn-schedule').innerHTML = response.data;
-        });
-    });
-&lt;/script&gt;
-</pre>
-            <h3>Styling</h3>
-            <p>Etiam eget lectus risus, a varius orci. Nam placerat mauris at dolor imperdiet at aliquet lectus ultricies. Duis tincidunt mi at quam condimentum lobortis.</p>
-            <h2 id="alerts-endpoint">Alerts Endpoint</h2>
-            <p>Maecenas eu placerat ante. Fusce ut neque justo, et aliquet enim. In hac habitasse platea dictumst. Nullam commodo neque erat, vitae facilisis erat. Cras at mauris ut tortor vestibulum fringilla vel sed metus.</p>
-            <h3>Integration</h3>
-            <p> Donec interdum purus a justo feugiat rutrum. Sed ac neque ut neque dictum accumsan. Cras lacinia rutrum risus, id viverra metus dictum sit amet. Fusce venenatis, urna eget cursus placerat, dui nisl fringilla purus, nec tincidunt sapien justo ut nisl. Curabitur lobortis semper neque et varius.</p>
-                <pre>
-&lt;div id=&quot;venn-schedule&quot;&gt;&lt;/div&gt;
-&lt;script src=&quot;http://api-tim.getvenn.io/v1/sdk.js?userId=9382SDFDS409SDDF23PAA&amp;apiKey=DJHS4389JKRH98FUD0SJL340934&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-    Venn.init(function() {
-        Venn.api('schedule.js', { userId: &quot;9382SDFDS409SDDF23PAA&quot;, apiKey: &quot;DJHS4389JKRH98FUD0SJL340934&quot; }, &quot;GET&quot;, function(response) {
-            document.getElementById('venn-schedule').innerHTML = response.data;
-        });
-    });
-&lt;/script&gt;
-</pre>
-            <h3>Styling</h3>
-            <p>Etiam eget lectus risus, a varius orci. Nam placerat mauris at dolor imperdiet at aliquet lectus ultricies. Duis tincidunt mi at quam condimentum lobortis.</p>
-        </div>
+
+        </p>
+
+
     </div>
 </div>
 </template>

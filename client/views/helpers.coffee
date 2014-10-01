@@ -1,8 +1,8 @@
 # Template Helpers
 UI.registerHelper "generalName", ->
 	Meteor.user().profile.company || Meteor.user().profile.username || Meteor.user().profile.email
-UI.registerHelper "apiKey", ->
-	Apps.findOne().apiKey if Apps.findOne()
+UI.registerHelper "apikey", ->
+	Apps.findOne().apikey if Apps.findOne()
 
 # Javascript Helpers
 window.buttonLoading = (selector, delay) ->
