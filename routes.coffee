@@ -7,10 +7,11 @@ Router.map ->
   @route "terms"
   @route "private-policy"
 
-  @route '/',
+  @route 'landing',
+    path: '/'
     onBeforeAction: ->
       Router.go('dashboard') if Meteor.user()
-      Router.go('/documentation') unless Meteor.user()
+      Router.go('/') unless Meteor.user()
 
   @route 'dashboard',
     onBeforeAction: ->
@@ -24,8 +25,6 @@ Router.map ->
     waitOn: ->
       Meteor.subscribe "my-apps"
 
-
-
   # this needs to be last I think
   @route 'notFound',
     path: '*'
@@ -33,3 +32,4 @@ Router.map ->
     action: ->
       @response.statusCode = 404
       @response.end Handlebars.templates['404']()
+      

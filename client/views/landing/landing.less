@@ -1,0 +1,586 @@
+@import '../../stylesheets/mixins';
+@import '../../stylesheets/variables';
+
+
+// HOME PAGE
+
+// @brand-primary:         #c2554e !default;
+@brand-primary: blue !default;
+@user-benefits-color: #339c3c;
+
+.text-shadow{
+    text-shadow: 2px 2px black!important;
+}
+
+h4 {
+    line-height: 1.5;
+}
+
+.marketing {
+    padding-bottom: 0px;
+}
+
+.marketing.bg-brand-krrb,
+.marketing.bg-brand-yerdle,
+.marketing.bg-brand-tinder {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.marketing-header {
+    font-size: 38px;
+}
+
+.header {
+    border: 0px !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 100;
+}
+
+.landing {
+    background-color: #FEFEFE;
+    header {
+        padding: 10px;
+    }
+    .header {
+        background-image: url("../img/venn/venn-check-blackground-blue.svg");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 2800px auto;
+    }
+    .logo {
+        padding: 5px 0;
+    }
+    .nav {
+        .link {
+            font-weight: bold;
+            color: @gray-dark;
+        }
+    }
+    // ---------------------------------------- \\
+    // Hero Container							\\
+    // ---------------------------------------- \\
+    .hero {
+        padding: 0px 50px;
+        height: 860px;
+        color: white;
+        // background-image: url("/img/peerio_hero_map.png");
+        // background-position: center center;
+        // background-image: url("../img/venn/venn-home-background.png");
+        // background-repeat: no-repeat;
+        // background-position: center center;
+        // background-color: blue;
+        // position: relative;
+        // top: -90px;
+        // height: 893px;
+        // background: rgb(221,84,50); /* Old browsers
+        // background: -moz-linear-gradient(top,  rgba(221,84,50,1) 0%, rgba(194,85,78,1) 100%); /* FF3.6+
+        // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(221,84,50,1)), color-stop(100%,rgba(194,85,78,1))); /* Chrome,Safari4+
+        // background: -webkit-linear-gradient(top,  rgba(221,84,50,1) 0%,rgba(194,85,78,1) 100%); /* Chrome10+,Safari5.1+
+        // background: -o-linear-gradient(top,  rgba(221,84,50,1) 0%,rgba(194,85,78,1) 100%); /* Opera 11.10+
+        // background: -ms-linear-gradient(top,  rgba(221,84,50,1) 0%,rgba(194,85,78,1) 100%); /* IE10+
+        // background: linear-gradient(to bottom,  rgba(221,84,50,1) 0%,rgba(194,85,78,1) 100%); /* W3C
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd5432', endColorstr='#c2554e',GradientType=0 ); /* IE6-9 */
+        .ven_call_to_action {
+            margin-top: 60px;
+        }
+        h2 {
+            font-size: 38px;
+            font-weight: @font-stack-bold;
+        }
+        p {
+            font-size: 21px;
+        }
+        .peeriologo {
+            margin: 75px auto 70px auto;
+        }
+        .maintext {
+            font-size: 36px;
+        }
+        .subtext {
+            font-size: 23px;
+        }
+        .links {
+            color: white;
+            font-weight: @font-stack-bold;
+            text-transform: uppercase;
+        }
+        .btn-submit {
+        	color: white;
+        	background-color: #ec125f;
+        	border-bottom: 4px solid #cc0e51;
+        }
+        .company-logos {
+		    .corp-logo {
+				background-repeat: no-repeat;
+				background-position: center center;
+				height: 140px;
+				width: 20%;
+				float: left;
+				position: relative;
+				top: 127px;
+			 	&.brandery {
+			 		background-image: url("../img/venn/logos-brandery-white.png");	 		
+			 	}
+			 	&.tech-crunch {
+			 		background-image: url("../img/venn/logos-tech-crunch-white.png");
+			 		position: relative;
+					top: 150px;
+ 		
+			 	}
+			 	&.business-courior {
+			 		background-image: url("../img/venn/logos-business-courier-white.png");
+			 		position: relative;
+					top: 192px;	 		
+			 	}
+			 	&.modulus {
+			 		background-image: url("../img/venn/logos-modulus-white.png");	
+			 		position: relative;
+					top: 227px; 		
+			 	}
+			 	&.nodejs {
+			 		background-image: url("../img/venn/logos-nodejs-white.png");	
+			 		position: relative;
+					top: 258px; 		
+			 	}
+			}
+		}
+        .nav {
+            margin-top: 20px;
+        }
+        .early-access,
+        .developer-login {
+            color: white;
+            border: 2px solid rgba(255,255,255,.8)!important;
+            margin-left: 10px;
+        }
+        .early-access:hover {
+            color: white;
+            border: 2px solid rgba(255,255,255,1)!important;
+            margin-left: 10px;   
+            background-color: rgba(255,255,255,.6)!important;     
+        }
+        .developer-login:hover {
+            color: white;
+            border: 2px solid rgba(255,255,255,1)!important;
+            margin-left: 10px;
+            background-color: rgba(255,255,255,.6)!important; 
+        }
+    }
+    .section-title {
+        margin-bottom: 50px;
+        color: white;
+    }
+    .section-sub-title {
+        text-transform: uppercase;
+    }
+    .features {
+        margin-bottom: 30px;
+        padding-right: 80px;
+        h2 {
+            font-weight: bold;
+            color: #c2554e;
+        }
+        h4 {
+            font-size: 14px;
+        }
+    
+
+    }
+    // ---------------------------------------- \\
+    // Summary Section - Container				\\
+    // ---------------------------------------- \\
+    .summaries {
+        padding: 50px 50px 0px 50px;
+        color: @gray-dark;
+
+        .summaryImageHolder {
+            margin-top: 126px;
+            height: 186px;
+        }
+        .feature {
+            position: relative;
+            &.first { bottom: 190px;}
+            &.second { bottom: 85px;}
+            &.third { bottom: 0px;}
+            .feature-title {
+                padding-left: 112px;
+                background: no-repeat center left;
+                height: 100px;
+                padding-top: 25px;
+                &.hassle {
+                    background-image: url("../img/summary/summary_meeting.png");
+                }
+                &.customizable {
+                    background-image: url("../img/summary/summary_customizable.png");
+                }
+                &.simple {
+                    background-image: url("../img/summary/summary_any_device.png");
+                }
+            }
+            p {
+			    font-size: 16px;
+			    line-height: 23px;
+			}
+        }
+    }
+    #summary-bottom-slant {
+        position: relative;
+        top: 6px;
+    }
+
+    // ---------------------------------------- \\
+    // User Benfits Section - Container			\\
+    // ---------------------------------------- \\
+    .user-benefit {
+        background-color: @user-benefits-color;
+        padding-top: 5px;
+        padding-bottom: 80px;
+
+        .container-circle {
+                height: 130px;
+                width: 140px;   
+				// position: relative;
+				// bottom: 60px;
+				-webkit-border-radius: 100px;
+				-moz-border-radius: 100px;
+				border-radius: 100px;
+				background-image: url("../img/user-benefits/user-benefits-circle-graphic.png");
+				background-color: rgba(225,225,225,0.3);
+				background-repeat: no-repeat;
+				background-position: center center;
+				margin: 0px auto
+            }
+        .container-box {
+            background-color: white;
+            border: 1px solid #e1e1e1;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+			padding: 0px 50px 50px 50px;
+            -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+        }
+        .section-sub-title {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .section-title {}
+        .feature-user-container {
+            color: @user-benefits-color;
+            .feature-user {
+            	color: #2a8832;
+            	background-repeat: no-repeat;
+            	background-position: left 21px;
+            	padding-left: 62px;
+            	padding-top: 18px;
+            	height: 75px;
+            	&.max-results {
+            		background-image: url("../img/user-benefits/benefit-result.png");
+            	}
+            	&.safety-first {
+            		background-image: url("../img/user-benefits/benefit-safety-first.png");
+            	}
+				&.coop-choice {
+            		background-image: url("../img/user-benefits/benefit-coop-choice.png");
+            	}
+				&.push-notification {
+					background-image: url("../img/user-benefits/benefit-result.png");
+				}
+				&.simple-schedule {
+					background-image: url("../img/user-benefits/benefit-result.png");
+				}
+				&.new-features {
+					background-image: url("../img/user-benefits/benefit-new-features.png");
+				}
+            }
+            p {
+                color: #666;
+                font-size: 16px;
+                line-height: 23px;
+
+            }
+        }
+        .user-artwork {
+            margin-top: 160px;
+        }
+
+    }
+    #user-benefit-bottom-slant {
+        position: relative;
+        top: 85px;
+        #trianglePath1 {
+            background-color: @user-benefits-color;
+
+        }
+        #trianglePath2 {
+            background-color: #07502e;
+        }
+        #trianglePath3 {
+            background-color: #2483c5;
+        }
+    }
+	// ---------------------------------------- \\
+    // Developer Benfits Section - Container	\\
+    // ---------------------------------------- \\
+
+    @developer-benefits-color: #2483c5;
+    .developer-benefit {
+        background-color: @developer-benefits-color;
+        padding-top: 5px;
+        padding-bottom: 80px;
+
+        .container-circle {
+                height: 130px;
+                width: 140px;
+				// position: relative;
+				// bottom: 60px;
+				// right: 50px;
+				-webkit-border-radius: 100px;
+				-moz-border-radius: 100px;
+				border-radius: 100px;
+				background-image: url("../img/developer-benefits/developer-benefits-circle-graphic.png");
+				background-color: rgba(202,76,189,0.8);
+				background-repeat: no-repeat;
+				background-position: center center;
+				margin: 0px auto
+            }
+		.sdk-block {
+        	margin-bottom: 30px;
+        	.sdk-type {}
+        	.sdk-image {
+    			height: 85px;
+    		}
+    		.sdk-title {
+    			color: rgba(0,0,0,0.4);
+    		}
+        }
+        .container-box {
+            background-color: white;
+            border: 1px solid #e1e1e1;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+			padding: 30px 50px 50px 50px;
+            -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+
+        }
+        .section-sub-title {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .section-title {}
+        .feature-developer-container {
+            color: @developer-benefits-color;
+            .feature-developer {
+            	color: @developer-benefits-color;
+            	background-repeat: no-repeat;
+            	background-position: left 21px;
+            	padding-left: 62px;
+            	padding-top: 18px;
+            	height: 75px;
+            	&.simple-sdk {
+            		background-image: url("../img/developer-benefits/sdk-box.png");
+            	}
+            	&.fast-integration {
+            		background-image: url("../img/developer-benefits/quick-install.png");
+            	}
+				&.visual-customization {
+            		background-image: url("../img/developer-benefits/easily-skinned.png");
+				}
+                &.push-notification {
+                    background-image: url("../img/developer-benefits/push-notifications.png");
+                }
+            }
+            p {
+                color: #666;
+                font-size: 16px;
+                line-height: 23px;
+
+            }
+        }
+        .developer-artwork {
+            margin-top: 160px;
+            button {
+                margin-top: 30px;
+                background-color: #dcdcdc;
+                border-bottom: 5px solid #c4c4c4;
+            }
+        }
+    }
+
+    // ---------------------------------------- \\
+    // Developer Section - Container			\\
+    // ---------------------------------------- \\
+    .code-example {
+    	h2 {
+    		color: @developer-benefits-color;
+    	}
+    	p {
+    		color: #666;
+    	}
+        .item {
+            overflow: hidden;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            background: blue;
+            border-radius: 5px;
+            border: 1px solid #dee2e9;
+        }
+    }
+
+
+    // ---------------------------------------- \\
+    // Cases Section - Container				\\
+    // ---------------------------------------- \\
+    .cases {
+        padding: 0px;
+        p {
+            font-size: 20px;
+        }
+    }
+    // ---------------------------------------- \\
+    // Scheduling Section - Container			\\
+    // ---------------------------------------- \\
+    .scheduling {
+        color: @gray-dark;
+        h4 {
+            font-size: 20px;
+        }
+    }
+    // ---------------------------------------- \\
+    // Location Section - Container				\\
+    // ---------------------------------------- \\
+    .location {
+        background-image: url("/img/mapping/mapping_cincinnati.jpg");
+        background-position: center bottom;
+        height: 1110px;
+        h4 {
+            font-size: 20px;
+        }
+    }
+    // ---------------------------------------- \\
+    // Payment Section - Container				\\
+    // ---------------------------------------- \\
+    .payments {
+        color: @gray-dark;
+        h4 {
+            font-size: 20px;
+            color: @gray;
+        }
+        .creditCardCopy {
+            font-size: 16px;
+            color: @gray-light;
+        }
+    }
+}
+
+// ---------------------------------------- \\
+// FAQ Page - faq.html						\\
+// ---------------------------------------- \\
+.faq {
+    margin-top: 40px;
+    color: @gray-light;
+    h1 {
+        color: @gray-dark;
+        font-size: 38px;
+    }
+    h2 {
+        color: @gray;
+        font-size: 20px;
+        line-height: 36px;
+        margin-bottom: 9px;
+        margin-top: 40px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .quick_links {
+        ul {
+            li {
+                color: @gray-light;
+                list-style: none;
+                font-size: 16px !important;
+                line-height: 24px;
+                &.title {
+                    font-size: 21px;
+                    color: @gray-dark;
+                    margin-top: 22px;
+                }
+            }
+        }
+    }
+    .peerioli {
+        font-size: 16px;
+        line-height: 32px;
+    }
+}
+
+// ---------------------------------------- \\
+// Payment Section - Container				\\
+// ---------------------------------------- \\
+.footer {
+    // background-color: #333333;
+    font-size: 16px;
+    .hexagon {
+        position: relative;
+        width: 200px;
+        height: 115.47px;
+        margin: 57.74px 0;
+        background-size: auto 230.9401px;
+        background-position: center;
+        &.ian {
+            background-image: url("../img/team/team-ian.png");
+        }
+        &.steffan {
+            background-image: url("../img/team/team-steffan.png");
+        }
+        &.tim {
+            background-image: url("../img/team/team-tim.jpg");
+        }
+    }
+    .hexTop,
+    .hexBottom {
+        position: absolute;
+        z-index: 1;
+        width: 141.42px;
+        height: 141.42px;
+        overflow: hidden;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background: inherit;
+        left: 29.29px;
+    }
+
+    .recent-blog-post{
+        .blog-image {
+            height: 150px;
+            width: 150px;
+            margin: 0px auto;
+            -webkit-border-radius: 150px;
+            -moz-border-radius: 150px;
+            border-radius: 150px;
+            background-color: #666;
+        }
+        .blog-title {
+            font-size: 34px;
+        }
+    }
+    .footerElement {
+        .title {
+            font-weight: bold;
+        }
+    }
+    ul {
+        list-style-type: none;
+        margin-left: 0px;
+        li  {
+            line-height: 2;
+        }
+    }
+}

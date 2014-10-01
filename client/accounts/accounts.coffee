@@ -4,9 +4,13 @@ Meteor.startup ->
   $('body').attr 'data-target', '#scrollonme'
   # data-spy="scroll" data-target=".navbar-example"
 
+  for name of Template
+    Template[name].rendered = templateRendered
+
   Tracker.autorun ->
     # accounts-entry issue where you have to click login twice
     Router.go "/dashboard" if Meteor.user() and Router.current() and Router.current().path is "/sign-in" # change home to whatever route you want to take the user to after login
+    # showOrHideNav(Router.current()) if Router.current() and Router.isStopped
 
     # to top
     current = Router.current()
@@ -53,3 +57,23 @@ Meteor.startup ->
           required: true # Adds html 5 required property if true
       }
     ]
+
+# showOrHideNav = (route) ->
+#   console.log route
+#   if route is "/"
+#     $("nav").addClass("hide")
+#     $(".page-top-spacing").addClass("hide")
+#   else
+#     $("nav").removeClass("hide")
+#     $(".page-top-spacing").removeClass("hide")
+
+# run after each template rendered (possibly multiple times :( )
+templateRendered = ->
+  route = Router.current().route.name
+  if route is "landing"
+    $("nav").addClass("hide")
+    $(".page-top-spacing").addClass("hide")
+  else
+    $("nav").removeClass("hide")
+    $(".page-top-spacing").removeClass("hide")
+

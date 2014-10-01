@@ -2,13 +2,19 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "bootstrap3-less": {}
+      "bootstrap3-less": {},
+      "velocityjs": {}
     },
     "packages": {
       "bootstrap3-less": {
         "git": "https://github.com/simison/bootstrap3-less",
         "tag": "v0.2.1",
         "commit": "dc94a51ed00d7de6d6f2b6d65107a876d849ad61"
+      },
+      "velocityjs": {
+        "git": "https://github.com/Sewdn/meteor-velocityjs.git",
+        "tag": "v0.8.0",
+        "commit": "5e96099e2cf8f99dbc7ed61225e96b0ba833ff08"
       }
     }
   }

@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand p0" href="/">
-          	<img src="img/hero-venn-logo.sm.png" class="header-logo">
+          	<img src="img/venn/hero-venn-logo.sm.png" class="header-logo">
           </a>
         </div>
         <ul class="collapse navbar-collapse nav navbar-nav navbar-right">
@@ -17,9 +17,9 @@
           <li><a href="{{pathFor 'documentation'}}">Documentation</a></li>
           <li>
             {{#if currentUser}}
-              <a href="{{pathFor 'me'}}" class="navbar-link">Signed in as {{generalName}}</a>
+              <a href="{{pathFor 'landing'}}" class="navbar-link">Signed in as {{generalName}}</a>
             {{else}}
-              <a href="/sign-in">Log in</a>
+              <!-- <a href="/sign-in">Log in</a> -->
             {{/if}}
             <!-- <a href="{{pathFor 'documenation'}}">Documentation</a> -->
           </li>

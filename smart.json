@@ -1,5 +1,6 @@
 {
   "packages": {
-    "bootstrap3-less": {}
+    "bootstrap3-less": {},
+    "velocityjs": {}
   }
 }
