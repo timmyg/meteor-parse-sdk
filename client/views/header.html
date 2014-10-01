@@ -1,5 +1,16 @@
 <template name="header">
-  <nav class="navbar navbar-fixed-top" role="navigation">
+  
+  <script type="text/javascript">
+    $(document).on("scroll",function(){
+        if($(document).scrollTop()>10){
+            $(".navbar").removeClass("nav-large").addClass("nav-small");
+        } else{
+            $(".navbar").removeClass("nav-small").addClass("nav-large");
+        }
+    });
+  </script>
+
+  <nav class="navbar navbar-fixed-top nav-large" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5">

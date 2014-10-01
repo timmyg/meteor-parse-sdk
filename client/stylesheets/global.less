@@ -4,8 +4,17 @@
 /* ===============================
     GLOBAL STYLES
    =============================== */
+body,
+html {
+  height: 100%;
+}
 body {
   position: relative;
+  background-image: url("../img/venn-background-image.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+
 }
 img {
   max-width: 100%;
@@ -39,18 +48,30 @@ a {
 \*------------------------------------*/
 
 .page-top-spacing {
-    margin: 100px;
+    margin: 80px;
 }
 
 .navbar {
   background-color: white;
+  min-height: 80px;
   .navbar-nav {
     margin-top: 15px;
   }
 }
 
 .header-logo {
-  padding: 5px 20px;
+  padding: 7px 20px;
+}
+.navbar.nav-large {
+}
+.navbar.nav-small {
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+     -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+          box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+          transition: all .50s;
+     -moz-transition: all .50s; /* Firefox 4 */
+  -webkit-transition: all .50s; /* Safari and Chrome */
+       -o-transition: all .50s; /* Opera */          
 }
 
 
@@ -86,12 +107,26 @@ a {
  * the site.
  */
 
-.venn-background-image {
-  background-image: url("../img/venn-background-image.png");
-  background-repeat: no-repeat;
-  background-position: center top;
+.venn-background {
   background-size: 100%;
+  &.container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  &.container-fluid {  
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  &.blue-graphic {
+    background-image: url("../img/venn-background-image.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+  &.white-plane {
+    background-color: white;
+  }
 }
+
 
 
 /*------------------------------------*\
@@ -107,11 +142,30 @@ a {
 .container-box { 
   border: 1px solid #cecece;
   padding: 60px;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 // #faq-content {
 //   position: relative!important;
 // }
+
+
+/*------------------------------------*\
+    #SIDE-NAV #FAQ #DOCUMENTATION
+\*------------------------------------*/
+
+/*
+ * This section is for the .affix 
+ * that is on the FAQ & Documentation 
+ * page of the site.
+ */
+
+.affix {
+  position: fixed;
+  top: 115px;
+}
 
 
 
@@ -129,16 +183,26 @@ a {
 html, body {
   height: 100%;
 }
+
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -@footer-height; 
+  margin-bottom: -@footer-height;
+  // &.container {
+  //   height: 100%;
+  // }
+  // &.container-fluid {
+  //   height: 100%;
+  // }
 }
+
 .page-wrap:after {
   content: "";
   display: block;
 }
+
 .site-footer, .page-wrap:after {
   /* .push must be the same height as footer */
   height: @footer-height; 
+  margin-top: 50px;
 }
