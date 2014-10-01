@@ -59,15 +59,19 @@ Meteor.startup ->
     ]
 
 # run after each template rendered (possibly multiple times :( )
-Template.rendered = ->
-  route = Router.current().route.name
-  console.log route
-  if route is "landing"
-    console.log "is landing"
-    $("nav").addClass("hide")
-    $(".page-top-spacing").addClass("hide")
-  else
-    $("nav").removeClass("hide")
-    $(".page-top-spacing").removeClass("hide")
+# Template.rendered = ->
+#   console.log "SDKJDKJFJKLLKDJF"
+#   console.log this
+#   console.log "SDKJDKJFJKLLKDJF"
+#   console.log "SDKJDKJFJKLLKDJF"
+#   route = Router.current().route.name
+#   console.log route
+#   if route is "landing"
+#     console.log "is landing"
+#     $("nav").addClass("hide")
+#     $(".page-top-spacing").addClass("hide")
+#   else
+#     $("nav").removeClass("hide")
+#     $(".page-top-spacing").removeClass("hide")
 
 
