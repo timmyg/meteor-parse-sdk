@@ -4,6 +4,8 @@ Router.map ->
       Meteor.subscribe "my-apps"
 
   @route "faq"
+  @route "terms"
+  @route "private-policy"
 
   @route '/',
     onBeforeAction: ->

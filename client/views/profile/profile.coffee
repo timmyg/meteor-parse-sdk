@@ -14,7 +14,7 @@ Template.me.events
 			$set:
 				"profile.company": $("input#company").val()
 		, (err, success) ->
-			Apps.update Apps.findOne({userId: Meteor.userId()}),
+			Apps.update Apps.findOne()._id,
 				$set:
 					"alertEndpoint": $("input#alert-endpoint").val()
 				, (err, success) ->

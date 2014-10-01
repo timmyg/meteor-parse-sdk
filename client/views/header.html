@@ -1,15 +1,4 @@
 <template name="header">
-  
-  <script type="text/javascript">
-    $(document).on("scroll",function(){
-        if($(document).scrollTop()>10){
-            $(".navbar").removeClass("nav-large").addClass("nav-small");
-        } else{
-            $(".navbar").removeClass("nav-small").addClass("nav-large");
-        }
-    });
-  </script>
-
   <nav class="navbar navbar-fixed-top nav-large" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -24,7 +13,7 @@
           </a>
         </div>
         <ul class="collapse navbar-collapse nav navbar-nav navbar-right">
-          <li><a href="{{pathFor 'faq'}}">FAQ</a></li>
+          <!-- <li><a href="{{pathFor 'faq'}}">FAQ</a></li> -->
           <li><a href="{{pathFor 'documentation'}}">Documentation</a></li>
           <li>
             {{#if currentUser}}

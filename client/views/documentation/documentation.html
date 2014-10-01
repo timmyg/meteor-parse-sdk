@@ -4,33 +4,38 @@
     <div class="col-xs-12 col-md-3"></div>
     <h1 class="col-xs-12 col-md-9">Documentation</h1>
     <!-- <h2>apikey: {{apiKey}}</h2> -->
-    <p>
-        Integrating Venn is simple.  Integrate the "My Schedule" widget below so that users can set their schedule.  Then, integrate the "Pick Time" widget so that other user's can create meetups with other users. Lastly, you'll set up a server endpoint so that we can call it when you need to alert users via email (or however you would like).
-    </p>
     <div class="col-md-3">
         <div id="affix">
             <!-- <h5>FAQ</h5> -->
             <ul class="list-unstyled" role="tablist">
                 <li>
                     <a data-to="#my-schedule-widget" class="scroll-to" href="#my-schedule-widget">
-                        <h4>My Schedule Widget</h4>
+                        <h4>#1 My Schedule Widget</h4>
                     </a>
                 </li>
                 <li>
                     <a data-to="#pick-time-widget" class="scroll-to" href="#pick-time-widget">
-                        <h4>Pick Time Widget</h4>
+                        <h4>#2 Pick Time Widget</h4>
                     </a>
                 </li>
                 <li>
                     <a data-to="#alerts-endpoint" class="scroll-to" href="#alerts-endpoint">
-                        <h4>Alerts Endpoint</h4>
+                        <h4>#3 Alerts Endpoint</h4>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="col-xs-offset-0 col-xs-12 col-md-9"  >
-        <h2 id="my-schedule-widget">My Schedule Widget</h2>
+        <p>
+            Integrating Venn is simple:
+            <ol>
+                <li>Integrate the "My Schedule" widget so that your users can set their schedule</li>
+                <li>Integrate the "Pick Time" widget so that users can create meetups with other users</li>
+                <li>Set up a server endpoint so that we can call it when you need to alert users via email (or however you would like)</li>
+            </ol>
+        </p>
+        <h2 id="my-schedule-widget">#1 My Schedule Widget</h2>
         <h5>Set a user's schedule</h5>
         <p>Saves a user's default weekly schedule so that other's can create meetup's around their schedule. Place this in the user profile, or integrate it into the "listing" process in the case of a marketplace.</p>
         <h3>Integration</h3>
@@ -53,29 +58,23 @@
             </table>
         </p>
 <pre>
-&lt;div id=&quot;venn-picktimes&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;venn-schedule&quot; class=&quot;venn&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
     config = {
-        apikey: &quot;DJHS4389JKRH98FUD0SJL340934&quot;,
-        userid: &quot;8434843795JKHDFKJSDHFJKHDS&quot;,
-        inviteruserid: &quot;E9382SDFDS409SDDF23PAA&quot;,
-        txnid: &quot;KLJSD20384lKHJDJKFSHJD&quot;,
-        addresses: [
-            &quot;1411 Vine St. Cincinnati, OH 45202&quot;,
-            &quot;45040&quot;
-        ]
+        apikey: &quot;c2fd200d71efa50b171f&quot;,
+        userid: &quot;KDSJKDSLJFDS0980990890833&quot;
     }
     function vennLoaded(){
         /* anything you want to do after widget has loaded */
     };
-    /*do no edit anything below this line*/
-    var script = document.createElement(&#39;script&#39;); script.onload = function() {Venn.init(function() {Venn.api(&#39;pickmeetup.js&#39;, { userId: config.userid, apiKey: config.apikey, inviterUserId: config.inviteruserid, addresses: config.addresses, txnId: config.txnid }, &quot;GET&quot;, function(response) {document.getElementById(&#39;venn-picktimes&#39;).innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config.addresses);  }); }); }; script.src = &quot;http://api-tim.getvenn.io/v1/sdk.js?userId=&quot;+config.userid+&quot;&amp;apiKey=&quot;+config.apikey+&quot;&amp;txnId=&quot;+config.txnid+&quot;&amp;inviterUserId=&quot;+config.inviteruserid; document.getElementsByTagName(&#39;head&#39;)[0].appendChild(script);
+
+    var script = document.createElement(&#39;script&#39;); script.onload = function() {Venn.init(function() {Venn.api(&#39;schedule.js&#39;, { userid: config.userid, apikey: config.apikey }, &quot;GET&quot;, function(response) {document.getElementById(&#39;venn-schedule&#39;).innerHTML = response.data; Venn.scheduleLoaded(); vennLoaded(); }); }); }; script.src = &quot;//api.getvenn.io/v1/sdk.js?userid=&quot;+config.userid+&quot;&amp;apikey=&quot;+config.apikey; document.getElementsByTagName(&#39;head&#39;)[0].appendChild(script);
 &lt;/script&gt;
 </pre>
         <!-- <h3>Styling</h3> -->
         <p></p>
         
-        <h2 id="pick-time-widget">Pick Time Widget</h2>
+        <h2 id="pick-time-widget">#2 Pick Time Widget</h2>
         <p>Allow a user to create a meetup with a another user on your platform.</p>
         <h3>Integration</h3>
         <p>Drop this code at the end of your platform's transaction process so that your user (userid below) can seamlessly set up a meetup with the "seller" (authoruserid below). You must set up alerts (step 3) so that users are alerted by your platform.</p>
@@ -120,14 +119,32 @@
                 </tbody>
             </table>
         </p>
-            <pre>
-&lt;script&gt;<br/>                config = {<br/>                    apikey: &quot;DJHS4389JKRH98FUD0SJL340934&quot;,<br/>                    userid: &quot;8434843795JKHDFKJSDHFJKHDS&quot;,<br/>                    inviteruserid: &quot;E9382SDFDS409SDDF23PAA&quot;,<br/>                    txnid: &quot;KLJSD20384lKHJDJKFSHJD&quot;,<br/>                    addresses: [<br/>                        &quot;1411 Vine St. Cincinnati, OH 45202&quot;,<br/>                        &quot;45040&quot;<br/>                    ]<br/>                }<br/>                function vennLoaded(){<br/>                    /* anything you want to do after widget has loaded */<br/>                };<br/>                /*do no edit anything below this line*/<br/>                var script = document.createElement('script'); script.onload = function() {Venn.init(function() {Venn.api('pickmeetup.js', { userId: config.userid, apiKey: config.apikey, inviterUserId: config.inviteruserid, addresses: config.addresses, txnId: config.txnid }, &quot;GET&quot;, function(response) {document.getElementById('venn-picktimes').innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config.addresses);  }); }); }; script.src = &quot;http://api-tim.getvenn.io/v1/sdk.js?userId=&quot;+config.userid+&quot;&amp;apiKey=&quot;+config.apikey+&quot;&amp;txnId=&quot;+config.txnid+&quot;&amp;inviterUserId=&quot;+config.inviteruserid; document.getElementsByTagName('head')[0].appendChild(script);<br/>            &lt;/script&gt;
+<pre>
+&lt;div id=&quot;venn-picktimes&quot; class=&quot;venn&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    config = {
+        apikey: &quot;c2fd200d71efa50b171f&quot;,
+        userid: &quot;SLDKJFLDSLKJFDS32423423&quot;,
+        authoruserid: &quot;KDSJKDSLJFDS0980990890833&quot;,
+        txnid: &quot;KLJSD20384lKHJDJKFSHJD&quot;,
+        addresses: [
+            &quot;7875 Montgomery Rd Cincinnati, OH 45236&quot;,
+            &quot;1411 Vine St. Cincinnati, OH 45202&quot;,
+            &quot;45040&quot;
+        ]
+    }
+    function vennLoaded(){
+        /* anything you want to do after widget has loaded */
+    };
+    /*do no edit anything below this line*/
+    var script = document.createElement(&#39;script&#39;); script.onload = function() {Venn.init(function() {Venn.api(&#39;pickmeetup.js&#39;, { userid: config.userid, apiKey: config.apikey, authoruserid: config.authoruserid, addresses: config.addresses, txnid: config.txnid }, &quot;GET&quot;, function(response) {document.getElementById(&#39;venn-picktimes&#39;).innerHTML = response.data; Venn.picktimesLoaded(); vennLoaded();  Venn.setCoords(config.addresses);  }); }); }; script.src = &quot;//api.getvenn.io/v1/sdk.js?userid=&quot;+config.userid+&quot;&amp;apikey=&quot;+config.apikey+&quot;&amp;txnid=&quot;+config.txnid+&quot;&amp;authoruserid=&quot;+config.authoruserid; document.getElementsByTagName(&#39;head&#39;)[0].appendChild(script);
+&lt;/script&gt;
 </pre>
         <!-- <h3>Styling</h3> -->
 
 
 
-        <h2 id="alerts-endpoint">Alerts Endpoint</h2>
+        <h2 id="alerts-endpoint">#3 Alerts Endpoint</h2>
         <p>Set up an endpoint for us to call when a user needs to be alerted.</p>
         <h3>Integration</h3>
         <p>We will call your alerts endpoint (that you set up in your profile) any time you should alert your user (when a meetup is finalized or canceled). You can set up your email template as you prefer.</p>
@@ -173,29 +190,51 @@
                     </tr>
                     <tr>
                         <td>data.place</td>
-                        <td></td>
-                        <td>...</td>
+                        <td>So that you can create your own custom message with necessary data</td>
+                        <td>...coming soon...</td>
                     </tr>
                     <tr>
                         <td>data.date</td>
-                        <td></td>
-                        <td>...</td>
+                        <td>So that you can create your own custom message with necessary data</td>
+                        <td>...coming soon...</td>
                     </tr>
                 </tbody>
             </table>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-              <li class="active"><a href="#java" role="tab" data-toggle="tab">Java</a></li>
-              <li><a href="#python" role="tab" data-toggle="tab">Python</a></li>
-              <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li>
-              <li><a href="#node" role="tab" data-toggle="tab">Node</a></li>
+              <li class="active"><a href="#node" role="tab" data-toggle="tab">Node Example</a></li>
+              <li class="disabled"><a>Others coming soon...</a></li>
+              <!-- <li><a href="#java" role="tab" data-toggle="tab">Java</a></li> -->
+              <!-- <li><a href="#python" role="tab" data-toggle="tab">Python</a></li> -->
+              <!-- <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li> -->
             </ul>
 
             <!-- Tab panes -->
-            <!--
-            <div class="tab-content">
-              <div class="tab-pane active" id="java">
+            
+  <div class="tab-content">
+<div class="tab-pane active" id="node">
+             
 <pre>
+/*****
+This is an example using SendGrid, but you can use<br>any email provider or contact your users however fits best
+*****/
+var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+sendgrid.send({
+  to:       'example@example.com', //get user email from your database from userid param
+  from:     'you@yourcompany.com',
+  subject:  req.body.subject,
+  text:     req.body.body
+}, function(err, json) {
+  if (err) { return console.error(err); }
+  console.log(json);
+});
+</pre>
+ </div>
+          
+              <div class="tab-pane" id="java">
+
+<pre>
+
 import com.sendgrid.*;
 SendGrid sendgrid = new SendGrid("sendgrid_username", "sendgrid_password");
 
@@ -243,24 +282,10 @@ $response = $sendgrid->send($message);
 </pre>
 
               </div>
-              <div class="tab-pane" id="node">
-<pre>
-var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
-sendgrid.send({
-  to:       'example@example.com',
-  from:     'other@example.com',
-  subject:  'Hello World',
-  text:     'My first email through SendGrid.'
-}, function(err, json) {
-  if (err) { return console.error(err); }
-  console.log(json);
-});
-</pre>
--->
-<!--               </div>
+
             </div>
 
-        </p> -->
+        <!-- </p> -->
 
 
     </div>
