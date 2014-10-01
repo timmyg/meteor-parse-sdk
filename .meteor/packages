@@ -22,3 +22,7 @@ email
 force-ssl
 velocityjs
 timmyg13:parse-sdk
+spiderable
+gadicohen:phantomjs
+xorax:multiple-callbacks
+

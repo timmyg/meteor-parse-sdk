@@ -1,4 +1,7 @@
+Template.documentation.holla = ->
+	console.log "hoollllla"
 Template.documentation.rendered = ->
+	console.log "doc rendered"
 	$("#affix").affix 
 		offset:
 			top: 120

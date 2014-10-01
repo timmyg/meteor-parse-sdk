@@ -4,8 +4,8 @@ Meteor.startup ->
   $('body').attr 'data-target', '#scrollonme'
   # data-spy="scroll" data-target=".navbar-example"
 
-  for name of Template
-    Template[name].rendered = templateRendered
+  # for name of Template
+  #   Template[name].rendered = templateRendered
 
   Tracker.autorun ->
     # accounts-entry issue where you have to click login twice
@@ -58,22 +58,16 @@ Meteor.startup ->
       }
     ]
 
-# showOrHideNav = (route) ->
-#   console.log route
-#   if route is "/"
-#     $("nav").addClass("hide")
-#     $(".page-top-spacing").addClass("hide")
-#   else
-#     $("nav").removeClass("hide")
-#     $(".page-top-spacing").removeClass("hide")
-
 # run after each template rendered (possibly multiple times :( )
-templateRendered = ->
+Template.rendered = ->
   route = Router.current().route.name
+  console.log route
   if route is "landing"
+    console.log "is landing"
     $("nav").addClass("hide")
     $(".page-top-spacing").addClass("hide")
   else
     $("nav").removeClass("hide")
     $(".page-top-spacing").removeClass("hide")
+
 

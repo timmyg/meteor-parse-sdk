@@ -1,4 +1,5 @@
-# Template.home.rendered = ->
+Template.landing.rendered = ->
+	console.log "landing rendered"
 
 #   #SEO Page Title & Description
 #   document.title = "My New Meteor App"
